@@ -8,3 +8,9 @@ fun createBigIntegerRange(start: BigInteger, end: BigInteger): Sequence<BigInteg
     generateSequence(start) { current ->
         if (current < end) current + BigInteger.ONE else null
     }
+
+fun String.splitByLength(substringSize: Int): List<String> =
+    (0..<this.length / substringSize).map {
+        this.substring(it * substringSize, (it+1) * substringSize)
+    }
+
